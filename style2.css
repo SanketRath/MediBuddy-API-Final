@@ -1,0 +1,74 @@
+/*All the styling for version 2 of the app is done here*/
+
+.wrapper.show-info .home-screen
+{
+  transform: translateX(-200%);
+}
+
+.wrapper.show-info .category-screen
+{
+  transform: translateX(-200%);
+}
+
+.wrapper.show-info .info-screen
+{
+  transform: translateX(-200%);
+}
+
+
+.top-part .info-back-btn svg 
+{
+  width: 2rem;
+  cursor: pointer;
+  color: #fff;
+}
+
+.info-wrapper
+{
+  display: flex;
+  flex-direction: column;
+  margin-left: 1rem;
+  margin-right: 2rem;
+  margin-top: 5rem;
+  background-color: aqua;
+}
+
+.image-wrapper
+{
+  height: 18rem;
+  width: 22rem;
+}
+
+.image-wrapper img
+{
+  height: 16rem;
+  width: 16rem;
+  margin: 1.5rem;
+}
+
+.img-input-box div
+{
+  padding-left: 0.67rem;
+  padding-top: 0.45rem;
+  height: 1.5rem;
+  width: 7rem;
+  margin-top: 1rem;
+  margin-left: 6rem;
+  background-color: #4c3c3c;
+  color: #fff;
+  border: none;
+  border-radius: 0.6rem;
+  cursor: pointer;
+}
+
+.img-input-box div label
+{
+  cursor: pointer;
+}
+
+.img-input-box input
+{
+  visibility: hidden;
+}
+
+/*Navigation Buttons*/

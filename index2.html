@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medicine Details</title>
+  <link rel="stylesheet" href="style1.css">
+  <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+  <!-- Back Button -->
+   <div class="wrapper">
+    <a href="index.html" class="back-btn">
+        <img src="arrow-left.png" alt="Back" class="back-arrow">
+      </a>
+    
+      <div class="container">
+        <!-- Image Upload Section -->
+        
+        <!--
+        <div class="image-upload-section">
+          <label for="upload-input" class="upload-label">
+            <img src="no-image.jpg" alt="Placeholder Image" id="uploaded-image">
+          </label>
+          <input type="file" id="upload-input" accept="image/*" style="display: none;">
+          <button class="upload-btn">Upload Image</button>
+        </div>
+        -->
+
+        <div class="image-wrapper">
+          <img src="no-image.jpg" class="med-img">
+        </div>
+        <div class="img-input-box">
+          <div>
+            <label for="img-input" class="img-input-label">
+              Upload Image
+            </label>
+          </div>
+          <input type="file" accept="image/jpg, image/jpeg, image/png" id="img-input">
+        </div>
+    
+        <!-- Medicine Details -->
+        <div class="medicine-details">
+          <p id="medicine-name">Name: N/A</p>
+          <p id="medicine-category">Category: N/A</p>
+          <p id="medicine-time">Time: N/A</p>
+          <p id="medicine-status">Status: N/A</p>
+        </div>
+      </div>
+    
+      <!-- WhatsApp Button -->
+      <a href="https://wa.me/send?phone=7008923430&text=Hello! I am out of Medicines Can you please get it for me!!" id="whatsapp-link" target="_blank">
+        <img src="whatsapp.png" alt="WhatsApp" class="whatsapp-logo">
+      </a>
+   </div>
+   
+  
+
+  <script>
+    // Parse the query parameters
+    const params = new URLSearchParams(window.location.search);
+    const medicineId = params.get("id");
+
+    // Fetch tasks from localStorage
+    const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+
+    // Find the selected medicine
+    const selectedMedicine = tasks.find((task) => task.id == medicineId);
+
+    // Display the medicine details
+    if (selectedMedicine) {
+      document.getElementById("medicine-name").textContent = `Name: ${selectedMedicine.medicine || "N/A"}`;
+      document.getElementById("medicine-category").textContent = `Category: ${selectedMedicine.category || "N/A"}`;
+      document.getElementById("medicine-time").textContent = `Time: ${selectedMedicine.time || "N/A"}`;
+      document.getElementById("medicine-status").textContent = `Status: ${selectedMedicine.completed ? "Completed" : "Pending"}`;
+      
+      const phoneNumber = selectedMedicine.phone || "N/A";
+      const whatsappLink = `https://web.whatsapp.com/send?phone=${phoneNumber}&text=Hello! I am out of ${selectedMedicine.medicine} Can you please get it for me!!`;
+
+      document.getElementById("medicine-phone").textContent = `Phone: ${phoneNumber}`;
+      if (phoneNumber !== "N/A") {
+        document.getElementById("whatsapp-link").href = whatsappLink;
+      }
+    } else {
+      document.querySelector(".medicine-details").innerHTML = "<p>Medicine not found!</p>";
+    }
+
+    // Image upload logic
+    /*
+    const uploadInput = document.querySelector(".upload-btn");
+    const uploadedImage = document.getElementById("uploaded-image");
+
+    uploadInput.addEventListener("click", (e) => {
+      const file = e.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(event) {
+          uploadedImage.src = event.target.result;
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+    */
+  </script>
+  
+</body>
+
+<script src="script2.js"></script>
+</html>

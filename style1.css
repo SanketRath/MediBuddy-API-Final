@@ -1,0 +1,130 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+
+  .wrapper {
+    width: 100%;
+    max-width: 375px;
+    height: 90vh;
+    border: 2px solid #ccc;
+    border-radius: 20px;
+    background-color: #e3effc; 
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+
+  .back-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 2;
+  }
+  
+  .back-arrow {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+  }
+  
+
+  .image-upload-section {
+    margin: 40px auto 20px;
+    width: 70%;
+    text-align: center;
+  }
+
+  
+  .upload-label {
+    display: block;
+    width: 100%;
+    height: 200px;
+    border: 3px solid #d1f7ff;
+    background-color: #f0f8ff;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .upload-label img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .upload-btn {
+    margin-top: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .upload-btn:hover {
+    background-color: #555;
+  }
+  
+
+  .medicine-details {
+    text-align: left;
+    padding: 10px 30px;
+  }
+  
+  .medicine-details p {
+    font-size: 0.9em;
+    color: #2c3e50;
+    margin: 5px 0;
+  }
+  
+
+  .whatsapp-logo {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    z-index: 2;
+  }
+  
+    @media (min-width:768px) {
+        .wrapper {
+            height: 50rem;
+            width: 25rem;
+            border-radius: 40px;
+            border: 10px solid #2e2e2e;
+            width: 90%;
+        }
+    }
+    
+  
+  @media (max-width: 480px) {
+    .medicine-details p {
+      font-size: 0.8em;
+    }
+  
+    .upload-label {
+      height: 150px;
+    }
+  }
+
+  .container{
+    margin: 100px auto;
+    height: 500px;
+    width: 300px;
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+  }
+  
